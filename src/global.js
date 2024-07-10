@@ -1,0 +1,1 @@
+export const API = "https://store-management-backend-me60.onrender.com"
