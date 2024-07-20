@@ -11,7 +11,7 @@ function Login() {
             .then((res) => {
                 console.log(res)
                 message.success("Login successfull")
-                localStorage.setItem("user_data",JSON.stringify(res.data.user))
+                localStorage.setItem("user_data", JSON.stringify(res.data.user))
                 navigate("/home")
             }).catch((error) => {
                 message.error("invalid credentials")
@@ -33,7 +33,10 @@ function Login() {
                             <Input id="password" placeholder="jack@123" />
                         </Form.Item>
 
-                        <Button htmlType="submit" type="primary" >Login</Button>
+                        <div className='loginButtons' >
+                            <Button type='primary' onClick={()=>{navigate("/signup")}} >Signup</Button>
+                            <Button htmlType="submit" type="primary" >Login</Button>
+                        </div>
 
                     </Form>
                 </Col>

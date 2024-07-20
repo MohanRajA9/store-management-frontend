@@ -24,7 +24,8 @@ function Home() {
     }, [cartItems])
 
     const logout = () => {
-        localStorage.removeItem("user_data","cart-item")
+        localStorage.removeItem("user_data")
+        localStorage.removeItem("cart-items")
         navigate("/")
     }
     return (

@@ -20,3 +20,8 @@
   justify-content: space-between;
   margin-top: 20px;
 }
+
+.loginButtons{
+  display: flex;
+  justify-content: space-evenly;
+}

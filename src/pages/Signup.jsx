@@ -2,7 +2,8 @@ import React from 'react';
 import { Row, Col, Form, Input, Button, message } from 'antd';
 import axios from 'axios';
 import { API } from '../global.js'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import '../App.css'
 
 function Signup() {
     const navigate = useNavigate()
@@ -35,7 +36,11 @@ function Signup() {
                         <Form.Item name='password' label='password' >
                             <Input id='password' placeholder='John@123' />
                         </Form.Item>
-                        <Button htmlType='submit' type='primary' >Signup</Button>
+                        <div className='loginButtons' >
+                            <Button htmlType='submit' type='primary' >Signup</Button>
+                            <Button type='primary' onClick={()=>{navigate("/")}} >Login</Button>
+                        </div>
+
                     </Form>
                 </Col>
             </Row>
