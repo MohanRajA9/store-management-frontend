@@ -3,8 +3,10 @@ import { API } from '../global'
 import axios from 'axios'
 import { Button } from 'antd'
 import ReactToPrint, { useReactToPrint } from 'react-to-print'
+import { useNavigate } from 'react-router-dom'
 
 function Bill() {
+    const navigate = useNavigate()
     const componentRef = React.useRef(null)
     const [billData, setBillData] = React.useState([])
     const getAllBills = () => {
@@ -47,7 +49,11 @@ function Bill() {
                     })}
                 </tbody>
             </table>
-            <Button type='primary' onClick={handlePrint} >Print Bill</Button>
+            <div className='billButtons' >
+                <Button type='primary' onClick={()=>{navigate("/home")}} >Home</Button>
+                <Button type='primary' onClick={handlePrint} >Print Bill</Button>
+            </div>
+            
             {/* <ReactToPrint
                 content={reactToPrintContent}
                 documentTitle='awesomeFileName'

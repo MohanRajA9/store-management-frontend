@@ -25,3 +25,13 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.cartButtons{
+  display: flex;
+  gap: 10px;
+}
+
+.billButtons{
+  display: flex;
+  justify-content: space-between;
+}
