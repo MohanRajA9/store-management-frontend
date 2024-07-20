@@ -10,3 +10,13 @@
   gap: 40px;
 }
 
+.headForHome{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartButtons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

@@ -6,8 +6,6 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
-
-
 function Cart() {
     const cartItems = useSelector((state) => state.itemShop.cartItems)
     console.log(cartItems)
@@ -43,17 +41,20 @@ function Cart() {
             ...values,
             subTotal,
             cartItems,
-            tax:((subTotal / 100) * 2).toFixed(2),
-            totalAmount:(subTotal + (subTotal / 100) * 2),
+            tax: ((subTotal / 100) * 2).toFixed(2),
+            totalAmount: (subTotal + (subTotal / 100) * 2),
             userId: JSON.parse(localStorage.getItem("user_data"))._id
         }
-        axios.post(`${API}/bill/charge-bill`,reqObject)
-        .then(()=>{
-            message.success("Bill added successfully")
-            navigate("/bills")
-        })
+        axios.post(`${API}/bill/charge-bill`, reqObject)
+            .then(() => {
+                message.success("Bill added successfully")
+                navigate("/bills")
+            })
     }
-    return (
+    const backToHome = () => {
+        navigate("/home")
+    }
+    return (  
         <div>
             <Table dataSource={cartItems} columns={columns} bordered pagination={false} ></Table>
             <div className='d-flex justify-content-end' >
@@ -61,7 +62,11 @@ function Cart() {
                     <h3>SUB TOTAL : <b>Rs.{subTotal}</b></h3>
                 </div>
             </div>
-            <Button type='primary' onClick={() => setBillChargeModal(true)} >Charge Bill</Button>
+            <div className='cartButtons' >
+                <Button type='primary' onClick={backToHome} >Home</Button>
+                <Button type='primary' onClick={() => setBillChargeModal(true)} >Charge Bill</Button>
+            </div>
+
             <Modal title='Charge Bill' open={billChargeModal} onCancel={() => { setBillChargeModal(false) }} footer={false} >
                 <Form onFinish={onFinish} >
                     <Form.Item name="customerName" label="Customer Name" >
@@ -86,6 +91,7 @@ function Cart() {
                     </div>
                 </Form>
             </Modal>
+
         </div>
     )
 }
