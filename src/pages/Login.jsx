@@ -26,7 +26,7 @@ function Login() {
                         <h3>Login</h3>
 
                         <Form.Item name="userId" label="User ID" >
-                            <Input id="username" placeholder="1" />
+                            <Input id="username" placeholder="1245" />
                         </Form.Item>
 
                         <Form.Item name="password" label="Password" >
