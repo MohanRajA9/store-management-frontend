@@ -24,13 +24,13 @@ function Cart() {
             title: "Name",
             dataIndex: "name"
         },
-        {
-            title: "Image",
-            dataIndex: "image",
-            render: (image) => {
-                <image src={image} alt="" />
-            }
-        },
+        // {
+        //     title: "Image",
+        //     dataIndex: "image",
+        //     render: (image) => {
+        //         <image src={image} alt="" />
+        //     }
+        // },
         {
             title: "Price",
             dataIndex: "price"
