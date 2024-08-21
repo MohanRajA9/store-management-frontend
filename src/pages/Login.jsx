@@ -41,6 +41,12 @@ function Login() {
                     </Form>
                 </Col>
             </Row>
+
+            <div className='demoCredentials' >
+                <div><h5>Deme Credentials</h5></div>
+                <div>User ID : 1000</div>
+                <div>Password : mohan@123</div>
+            </div>
         </div>
     )
 }

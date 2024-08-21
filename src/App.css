@@ -35,3 +35,10 @@
   display: flex;
   justify-content: space-between;
 }
+
+.demoCredentials{
+  display: flex;
+  /* align-items: center; */
+  margin-top: 20px;
+  gap: 40px;
+}
